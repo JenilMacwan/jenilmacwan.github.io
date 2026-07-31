@@ -1,25 +1,36 @@
 # 🌐 Jenil Macwan — Developer Portfolio
 
-Welcome to my personal portfolio repository! This site showcases my work as a Native Android & Software Developer, featuring interactive project previews, technical skills, and backend integrations.
+Welcome to my personal portfolio repository! This website showcases my work as a **Native Android & Software Developer**, featuring interactive project demonstrations, technical skills, and backend integrations.
 
-🚀 **Live Site:** [https://jenilmacwan.github.io/portfolio/](https://jenilmacwan.github.io/portfolio/)
+## 🚀 Live Website
+
+**🌍 [https://jenilmacwan.github.io/](https://jenilmacwan.github.io/)**
 
 ---
 
 ## ✨ Features
 
-- **Material 3 Design System:** Dark and light theme switching with smooth state persistence.
-- **Interactive IDE Mockup:** Custom Android Studio code editor with single-pass syntax highlighting and live simulated device screens.
-- **Project Showcase:** Highlights flagship projects including **F1Companion** (Formula 1 telemetry app), **DocShare** (Android file sharing app), and **GLIDE** (gesture control system).
-- **Responsive & Accessible:** Fully optimized for mobile and desktop with CSS Grid, keyboard navigation, and reduced-motion support.
+* 🎨 **Material 3 Design System** — Seamless dark and light theme switching with persistent user preferences.
+* 💻 **Interactive IDE Mockup** — A custom Android Studio-inspired editor featuring single-pass syntax highlighting and simulated device previews.
+* 📱 **Project Showcase** — Explore featured projects including:
+
+  * **F1Companion** – Formula 1 companion app with live telemetry, weather, and race insights.
+  * **DocShare** – Android document sharing application.
+  * **GLIDE** – AI-powered gesture recognition and computer control system.
+* 📐 **Responsive Design** — Optimized for desktop, tablet, and mobile devices.
+* ♿ **Accessibility** — Keyboard navigation and reduced-motion support for an inclusive experience.
+* ⚡ **Performance Focused** — Lightweight, fast-loading, and hosted on GitHub Pages.
 
 ---
 
-## 🛠️ Built With
+## 🛠️ Tech Stack
 
-- **Frontend:** HTML5, CSS3, JavaScript (Vanilla ES6+)
-- **Design:** Material 3 Design Tokens & JetBrains Mono / Outfit typography
-- **Hosting:** GitHub Pages
+| Category          | Technologies                   |
+| ----------------- | ------------------------------ |
+| **Frontend**      | HTML5, CSS3, JavaScript (ES6+) |
+| **Design System** | Material 3, CSS Variables      |
+| **Typography**    | Outfit, JetBrains Mono         |
+| **Hosting**       | GitHub Pages                   |
 
 ---
 
@@ -27,52 +38,72 @@ Welcome to my personal portfolio repository! This site showcases my work as a Na
 
 ```text
 .
-├── index.html        # Main markup and content structure
-├── styles.css        # Custom Material 3 styles and animations
-├── script.js         # Single-pass syntax highlighter & IDE switcher engine
-└── README.md         # Repository documentation
+├── index.html        # Main application entry point
+├── styles.css        # Material 3 styling and animations
+├── script.js         # Interactive logic and IDE simulation
+├── assets/           # Images, icons, and other static assets
+└── README.md         # Project documentation
+```
 
 ---
 
-## ⚙️ Local Development 
+## ⚙️ Running Locally
 
-    Clone the repository:
-    Bash
+Clone the repository:
 
-    git clone [https://github.com/jenilmacwan/portfolio.git](https://github.com/jenilmacwan/portfolio.git)
+```bash
+git clone https://github.com/jenilmacwan/portfolio.git
+```
 
-    Navigate into the project folder:
-    Bash
+Navigate to the project directory:
 
-    cd portfolio
+```bash
+cd portfolio
+```
 
-    Open index.html directly in your browser, or launch a local server:
-    Bash
+Run a local development server:
 
-    python -m http.server 8000
+```bash
+python -m http.server 8000
+```
 
-    Then open: http://localhost:8000
+Then open your browser and visit:
+
+```text
+http://localhost:8000
+```
 
 ---
 
 ## 🚀 Deployment
 
-This site is deployed using GitHub Pages:
+This portfolio is deployed using **GitHub Pages**.
 
-    Push your code to the main branch.
+To deploy your own version:
 
-    Go to Settings → Pages in your GitHub repository.
+1. Push your code to the `main` branch.
+2. Open **Settings → Pages** in your GitHub repository.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select:
 
-    Under Build and deployment, set Source to Deploy from a branch.
+   * **Branch:** `main`
+   * **Folder:** `/ (root)`
+5. Click **Save**.
 
-    Select the main branch and / (root) folder, then click Save.
+The site will automatically be published after deployment.
 
 ---
 
-## 📬 Contact & Socials
+## 📬 Connect With Me
 
-    GitHub: github.com/jenilmacwan
+* 🐙 **GitHub:** https://github.com/jenilmacwan
+* 💼 **LinkedIn:** https://linkedin.com/in/jenilmacwan
+* 🌐 **Portfolio:** https://jenilmacwan.github.io/portfolio/
 
-    LinkedIn: linkedin.com/in/jenilmacwan
+---
 
-    ⭐ If you found this project helpful or inspiring, feel free to leave a star!
+## ⭐ Support
+
+If you enjoyed this project or found it helpful, consider giving it a **⭐ Star** on GitHub. It helps others discover the project and motivates future improvements.
+
+Thank you for visiting my portfolio!
