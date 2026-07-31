@@ -4,7 +4,7 @@ Welcome to my personal portfolio repository! This website showcases my work as a
 
 ## 🚀 Live Website
 
-**🌍 https://jenilmacwan.github.io/portfolio/**
+**🌍 [https://jenilmacwan.github.io/](https://jenilmacwan.github.io/)**
 
 ---
 
