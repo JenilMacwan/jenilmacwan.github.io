@@ -32,7 +32,9 @@ Welcome to my personal portfolio repository! This site showcases my work as a Na
 ├── script.js         # Single-pass syntax highlighter & IDE switcher engine
 └── README.md         # Repository documentation
 
-⚙️ Local Development
+---
+
+## ⚙️ Local Development 
 
     Clone the repository:
     Bash
@@ -51,7 +53,9 @@ Welcome to my personal portfolio repository! This site showcases my work as a Na
 
     Then open: http://localhost:8000
 
-🚀 Deployment
+---
+
+## 🚀 Deployment
 
 This site is deployed using GitHub Pages:
 
@@ -63,10 +67,12 @@ This site is deployed using GitHub Pages:
 
     Select the main branch and / (root) folder, then click Save.
 
-📬 Contact & Socials
+---
+
+## 📬 Contact & Socials
 
     GitHub: github.com/jenilmacwan
 
     LinkedIn: linkedin.com/in/jenilmacwan
 
-⭐ If you found this project helpful or inspiring, feel free to leave a star!
+    ⭐ If you found this project helpful or inspiring, feel free to leave a star!
