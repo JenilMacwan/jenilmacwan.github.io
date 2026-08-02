@@ -1,430 +1,308 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="xh41PnHev046qobsP9C9pGBNhCTgBEkBfYv7VTM9Fxc" />
-
-    <!-- Primary Page Info -->
     <title>Jenil Macwan — Android Developer</title>
     <meta name="description"
-        content="Portfolio of Jenil Macwan — Android Developer specializing in native experiences with Kotlin, Jetpack Compose, MVVM architecture, and AI integrations.">
-    <meta name="keywords"
-        content="Android Developer, Kotlin, Jetpack Compose, MVVM, DocShare, F1 Companion, Gemini API, Portfolio, Jenil Macwan">
+        content="Portfolio of Jenil Macwan — Android Developer building native apps with Kotlin, Jetpack Compose, and MVVM architecture.">
     <meta name="author" content="Jenil Macwan">
-    <meta name="theme-color" content="#141218" id="metaTheme">
-    <link rel="canonical" href="https://jenilmacwan.github.io/" />
-
-    <!-- Open Graph / Facebook / LinkedIn Sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jenilmacwan.github.io/">
     <meta property="og:title" content="Jenil Macwan — Android Developer">
     <meta property="og:description"
-        content="Native Android experiences built with Kotlin, Jetpack Compose, & clean architecture.">
-    <meta property="og:image" content="https://jenilmacwan.github.io/assets/images/portfolio-preview.png">
+        content="Native Android apps built with Kotlin, Jetpack Compose &amp; clean architecture.">
 
-    <!-- Twitter Card Sharing -->
+    <!-- Standard Open Graph image for LinkedIn, Facebook, Discord, etc. -->
+    <meta property="og:image" content="assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter specific tags for a large preview card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://jenilmacwan.github.io/">
     <meta name="twitter:title" content="Jenil Macwan — Android Developer">
     <meta name="twitter:description"
-        content="Native Android experiences built with Kotlin, Jetpack Compose, & clean architecture.">
-    <meta name="twitter:image" content="https://jenilmacwan.github.io/assets/images/portfolio-preview.png">
+        content="Native Android apps built with Kotlin, Jetpack Compose &amp; clean architecture.">
+    <meta name="twitter:image" content="assets/images/og-image.png">
+    <meta name="theme-color" content="#2F5D50">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-    <!-- Fonts & Styles -->
+    <link rel="icon" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#home" class="skip-link">Skip to main content</a>
 
-    <!-- ============ NAVBAR ============ -->
-    <header class="navbar" id="navbar" role="banner">
-        <nav class="navbar__inner container" aria-label="Primary navigation">
-            <a href="#" class="navbar__logo" aria-label="Jenil Macwan — Home">JM<span class="logo-dot">.</span></a>
+    <div class="boot" id="boot">
+        <div class="boot-mark">JM</div>
+        <div class="boot-bar"><span id="bootFill"></span></div>
+        <p class="boot-label">Starting app…</p>
+    </div>
 
-            <div class="navbar__links" id="navLinks">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Flagship Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#contact" class="nav-link">Contact</a>
+    <div class="scroll-progress"><span id="scrollFill"></span></div>
+    <div class="toast" id="toast"></div>
+    <div class="wipe" id="wipe"></div>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand">
+                <div class="brand-mark">JM</div>
+                <div class="brand-name">Jenil Macwan<span>Android Developer</span></div>
             </div>
-
-            <div class="navbar__actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Switch theme">
-                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5" />
-                        <line x1="12" y1="1" x2="12" y2="3" />
-                        <line x1="12" y1="21" x2="12" y2="23" />
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                        <line x1="1" y1="12" x2="3" y2="12" />
-                        <line x1="21" y1="12" x2="23" y2="12" />
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                    </svg>
-                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                    </svg>
-                </button>
-                <button class="navbar__burger" id="navBurger" aria-label="Open menu" aria-expanded="false"
-                    aria-controls="mobileMenu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </nav>
-
-        <div class="mobile-overlay" id="mobileMenu" role="dialog" aria-label="Navigation menu" hidden>
-            <nav class="mobile-nav" aria-label="Mobile navigation">
-                <a href="#about" class="mobile-nav__link">About</a>
-                <a href="#projects" class="mobile-nav__link">Flagship Projects</a>
-                <a href="#skills" class="mobile-nav__link">Skills</a>
-                <a href="#education" class="mobile-nav__link">Education</a>
-                <a href="#contact" class="mobile-nav__link">Contact</a>
+            <nav class="topnav">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </nav>
+            <div class="status-pill"><span class="status-dot"></span>Open to work</div>
         </div>
     </header>
 
-    <main id="main">
+    <main class="wrap">
 
-        <!-- ===== HERO ===== -->
-        <section class="hero" id="hero" aria-labelledby="heroTitle">
-            <div class="container hero__grid">
-                <div class="hero__content">
-                    <p class="hero__badge reveal" aria-label="Status: open to work">
-                        <span class="pulse-dot" aria-hidden="true"></span>
-                        Open to opportunities
-                    </p>
-                    <h1 class="hero__name reveal reveal--d1" id="heroTitle">Jenil Macwan</h1>
-                    <p class="hero__role reveal reveal--d2">Android Developer</p>
-                    <p class="hero__desc reveal reveal--d3">
-                        I build polished, production-grade Android apps with Kotlin and Jetpack Compose,
-                        using MVVM architecture and robust API integrations.
-                    </p>
-                    <div class="hero__cta reveal reveal--d4">
-                        <a href="#projects" class="btn btn--filled">
-                            Explore Flagship Projects
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </a>
-                        <a href="#contact" class="btn btn--outline">Get in Touch</a>
+        <section id="home" class="hero">
+            <div class="hero-grid">
+                <div class="hero-anim" id="heroAnim">
+                    <p class="eyebrow">Kotlin · Jetpack Compose · MVVM<span class="screen-chip">01/05</span></p>
+                    <h1 class="headline">Native Android apps, <em>built screen by screen.</em></h1>
+                    <p class="lede">Entry-level Android developer with a B.E. in Computer Engineering, graduating May
+                        2026. I write production-grade apps in Kotlin and Compose — clean architecture, reactive data
+                        with Coroutines and Flow, and APIs wired up right the first time.</p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary">View projects</a>
+                        <a href="mailto:jenilmacwan29@gmail.com" class="btn btn-ghost">Say hello</a>
                     </div>
-                    <div class="hero__socials reveal reveal--d5">
-                        <a href="https://github.com/JenilMacwan" target="_blank" rel="noopener noreferrer"
-                            class="social-icon" aria-label="GitHub profile">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    <ul class="hero-meta">
+                        <li>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0Z" />
+                                <circle cx="12" cy="10" r="3" />
                             </svg>
-                        </a>
-                        <a href="http://www.linkedin.com/in/jenil-macwan-20a41824b" target="_blank"
-                            rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn profile">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            Ahmedabad, Gujarat
+                        </li>
+                        <li>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <path d="M8 2v4M16 2v4M3 10h18" />
                             </svg>
-                        </a>
-                        <a href="mailto:jenilmacwan29@gmail.com" class="social-icon" aria-label="Send email">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="4" width="20" height="16" rx="2" />
-                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                            </svg>
-                        </a>
-                    </div>
+                            Graduating May 2026
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Interactive Android Studio Code Editor & Preview Mockup -->
-                <div class="hero__ide-container reveal reveal--d3" aria-hidden="true">
-                    <div class="ide" id="ide">
-                        <div class="ide__header">
-                            <div class="ide__controls">
-                                <span class="ide__control-dot ide__control-dot--red"></span>
-                                <span class="ide__control-dot ide__control-dot--yellow"></span>
-                                <span class="ide__control-dot ide__control-dot--green"></span>
-                            </div>
-                            <span class="ide__title">Android Studio — PortfolioProjects</span>
+                <div class="phone-shell" id="phoneShell">
+                    <div class="phone-screen">
+                        <div class="phone-status">
+                            <span id="clock">09:41</span>
+                            <span class="bars"><i style="height:5px"></i><i style="height:7px"></i><i
+                                    style="height:9px"></i><i style="height:11px"></i></span>
                         </div>
-                        <div class="ide__body">
-                            <!-- Sidebar File List -->
-                            <div class="ide__sidebar">
-                                <div class="ide__sidebar-title">PROJECT</div>
-                                <div class="ide__files-list">
-                                    <button class="ide__file-item active" data-tab="0">
-                                        <span class="file-icon kotlin-icon">K</span>
-                                        F1Companion.kt
-                                    </button>
-                                    <button class="ide__file-item" data-tab="1">
-                                        <span class="file-icon kotlin-icon">K</span>
-                                        DocShare.kt
-                                    </button>
-                                    <button class="ide__file-item" data-tab="2">
-                                        <span class="file-icon python-icon">Py</span>
-                                        F1Backend.py
-                                    </button>
+                        <div class="phone-appbar">
+                            <div class="title">F1Companion<span>Live · Driver Standings</span></div>
+                            <div class="phone-live"></div>
+                        </div>
+                        <div class="phone-body">
+                            <div class="stat-row">
+                                <div class="stat-tile">
+                                    <div class="num" data-target="3">0</div>
+                                    <div class="label">Apps shipped</div>
+                                </div>
+                                <div class="stat-tile">
+                                    <div class="num" data-target="4">0</div>
+                                    <div class="label">APIs wired</div>
+                                </div>
+                                <div class="stat-tile">
+                                    <div class="num" data-target="100">0</div>
+                                    <div class="label">% Kotlin</div>
                                 </div>
                             </div>
-
-                            <!-- Main code workspace -->
-                            <div class="ide__workspace">
-                                <div class="ide__tabs">
-                                    <div class="ide__tab active" id="tabName">F1Companion.kt</div>
-                                </div>
-                                <div class="ide__code-editor">
-                                    <div class="ide__line-numbers">
-                                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-                                    </div>
-                                    <pre class="ide__code-pane" id="codePane"><code class="code-kotlin">@Composable
-fun F1DashboardScreen(
-    viewModel: F1ViewModel = hiltViewModel()
-) {
-    val raceState by viewModel.raceState.collectAsState()
-    
-    LazyColumn(modifier = Modifier.fillMaxSize()) {
-        item {
-            NextRaceCard(
-                race = raceState.nextRace,
-                countdown = raceState.countdown
-            )
-        }
-    }
-}</code></pre>
-                                </div>
+                            <p class="standings-title">// standings.json</p>
+                            <div class="standing-row">
+                                <span class="standing-pos">01</span>
+                                <span class="standing-name">Compose UI<small>Declarative, reactive</small></span>
+                                <span class="standing-pts">MVVM</span>
                             </div>
-
-                            <!-- Live Device Preview Panel -->
-                            <div class="ide__preview">
-                                <div class="ide__preview-header">
-                                    <span>Preview: Pixel 8</span>
-                                    <span class="ide__preview-badge">Live</span>
-                                </div>
-                                <div class="ide__preview-screen" id="previewScreen">
-                                    <!-- Preview 1: F1 Companion Screen -->
-                                    <div class="sim-screen active" data-sim="0">
-                                        <div class="sim-appbar">
-                                            <span class="sim-appbar-title">F1 Companion</span>
-                                        </div>
-                                        <div class="sim-content">
-                                            <div class="sim-label">NEXT RACE</div>
-                                            <div class="sim-race-card">
-                                                <span class="sim-flag">🇲🇨 Monaco Grand Prix</span>
-                                                <span class="sim-sub">Circuit de Monaco</span>
-                                                <div class="sim-countdown">
-                                                    <span>02d</span> : <span>14h</span> : <span>33m</span>
-                                                </div>
-                                            </div>
-                                            <div class="sim-label">STANDINGS</div>
-                                            <div class="sim-row"><span>1. M. Verstappen</span><strong>219 pts</strong>
-                                            </div>
-                                            <div class="sim-row"><span>2. L. Norris</span><strong>186 pts</strong></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Preview 2: DocShare App Screen -->
-                                    <div class="sim-screen" data-sim="1">
-                                        <div class="sim-appbar">
-                                            <span class="sim-appbar-title">DocShare</span>
-                                        </div>
-                                        <div class="sim-content">
-                                            <div class="sim-doc-card">
-                                                <div class="sim-doc-icon">📄</div>
-                                                <div>
-                                                    <span class="sim-doc-title">Lecture_Note_4.pdf</span>
-                                                    <span class="sim-doc-meta">Faculty: Dr. Shah</span>
-                                                </div>
-                                            </div>
-                                            <div class="sim-label">GEMINI AI SUMMARY</div>
-                                            <div class="sim-ai-box">
-                                                This lecture notes covers the fundamental theories of DBMS transaction
-                                                isolation levels (ACID rules)...
-                                            </div>
-                                            <button class="sim-btn">Generate Q&amp;A Study Guide</button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Preview 3: Backend Swagger Preview -->
-                                    <div class="sim-screen" data-sim="2">
-                                        <div class="sim-appbar">
-                                            <span class="sim-appbar-title">FastAPI Backend</span>
-                                        </div>
-                                        <div class="sim-content sim-content--api">
-                                            <div class="api-endpoint get"><span
-                                                    class="api-method">GET</span>/api/v1/f1/standings</div>
-                                            <div class="api-response">
-                                                <pre>{
-  "status": "success",
-  "data": {
-    "season": "2026",
-    "round": 12,
-    "standings": [...]
-  }
-}</pre>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="standing-row">
+                                <span class="standing-pos">02</span>
+                                <span class="standing-name">Retrofit + OkHttp<small>Live race &amp; weather
+                                        data</small></span>
+                                <span class="standing-pts">REST</span>
+                            </div>
+                            <div class="standing-row">
+                                <span class="standing-pos">03</span>
+                                <span class="standing-name">Room DB<small>Offline caching</small></span>
+                                <span class="standing-pts">Cache</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-cue reveal reveal--d5" aria-hidden="true">
-                <span>Scroll</span>
-                <div class="scroll-line"></div>
-            </div>
-        </section>
-
-        <!-- ===== ABOUT + STATS ===== -->
-        <section class="about" id="about" aria-labelledby="aboutTitle">
-            <div class="container">
-                <div class="section-eyebrow reveal">About</div>
-                <h2 class="section-heading reveal reveal--d1" id="aboutTitle">Building what I love</h2>
-                <div class="about__grid">
-                    <div class="about__text reveal reveal--d2">
-                        <p>
-                            I'm an Android developer from Ahmedabad, Gujarat, finishing up my B.E. in Computer
-                            Engineering.
-                            I specialize in native Android development, focusing on building high-performance,
-                            responsive user interfaces
-                            using **Kotlin** and **Jetpack Compose**.
-                        </p>
-                        <p>
-                            My development philosophy centers around clean, scalable code. I build using standard **MVVM
-                            architecture**,
-                            using **Coroutines** &amp; **StateFlow** for fluid async operations, and **Hilt** for robust
-                            dependency injection.
-                        </p>
-                        <p>
-                            I love solving complex end-to-end problems — whether it is aggregating API data on a custom
-                            backend or using local Room DB databases for seamless offline caching.
-                        </p>
-                    </div>
-                    <div class="about__stats reveal reveal--d3">
-                        <div class="stat" data-target="3" data-suffix="+">
-                            <span class="stat__number" aria-label="3+ projects">3+</span>
-                            <span class="stat__label">Projects</span>
-                        </div>
-                        <div class="stat" data-target="7.3" data-decimals="2">
-                            <span class="stat__number" aria-label="7.30 CGPA">7.30</span>
-                            <span class="stat__label">CGPA (B.E.)</span>
-                        </div>
-                        <div class="stat" data-target="5" data-suffix="+">
-                            <span class="stat__number" aria-label="5+ API endpoints built">5+</span>
-                            <span class="stat__label">Backend APIs integrated</span>
+                        <div class="phone-footer">
+                            <span>coroutines: active</span>
+                            <span>latency: 42ms</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== FLAGSHIP PROJECTS ===== -->
-        <section class="projects surface-1" id="projects" aria-labelledby="projTitle">
-            <div class="container">
-                <div class="section-eyebrow reveal">Featured Work</div>
-                <h2 class="section-heading reveal reveal--d1" id="projTitle">Flagship Projects</h2>
-
-                <!-- Flagship Project 1: F1 Companion -->
-                <div class="flagship-item reveal">
-                    <div class="flagship-item__body">
-                        <div class="flagship-item__header">
-                            <span class="flagship-item__type">Native Android App &amp; Backend API</span>
-                            <h3 class="flagship-item__title">F1 Companion</h3>
-                        </div>
-                        <p class="flagship-item__desc">
-                            A complete Formula 1 helper ecosystem. The native Android application features live race
-                            schedules, weather notifications,
-                            and real-time standing rankings. To overcome scattered third-party API limitations, I built
-                            and hosted a custom Python FastAPI
-                            backend that aggregates and packages the data into unified low-latency responses.
-                        </p>
-                        <div class="flagship-item__spec">
-                            <div class="spec-block">
-                                <strong>Client Engine:</strong>
-                                <p>Jetpack Compose, MVVM Architecture, Room Database, StateFlow/Coroutines, Hilt DI</p>
-                            </div>
-                            <div class="spec-block">
-                                <strong>Server Engine:</strong>
-                                <p>Python, FastAPI, Vercel Serverless hosting, JSON Payload Minimization</p>
-                            </div>
-                        </div>
-                        <div class="flagship-item__tech">
-                            <span class="chip">Kotlin</span>
-                            <span class="chip">Jetpack Compose</span>
-                            <span class="chip">FastAPI</span>
-                            <span class="chip">Room DB</span>
-                            <span class="chip">Hilt</span>
-                        </div>
-                        <div class="flagship-item__links">
-                            <a href="https://github.com/JenilMacwan/F1Companion" target="_blank"
-                                rel="noopener noreferrer" class="btn btn--filled btn--sm">
-                                Android App Repo
-                            </a>
-                            <a href="https://github.com/JenilMacwan/f1companion-api" target="_blank"
-                                rel="noopener noreferrer" class="btn btn--outline btn--sm">
-                                Backend API Repo
-                            </a>
-                            <a href="https://f1companion-api.vercel.app" target="_blank" rel="noopener noreferrer"
-                                class="btn btn--outline btn--sm">
-                                Live API endpoint
-                            </a>
-                        </div>
-                    </div>
+        <section id="about">
+            <div class="section-head">
+                <div>
+                    <p class="section-tag">// about<span class="screen-chip">02/05</span></p>
+                    <h2 class="section-title">Who's building this</h2>
                 </div>
+                <p class="section-note">A quick look at the education behind the code.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <p>I'm an entry-level Android developer focused on native development with Kotlin and Jetpack
+                        Compose. My work leans on MVVM architecture, Coroutines and Flow for async data, and Firebase
+                        for auth and storage — I care about clean, maintainable code and mobile experiences that feel
+                        instant. I'm looking for an Android Developer role or internship where I can contribute to real,
+                        shipping products.</p>
+                </div>
+                <ul class="timeline reveal">
+                    <li>
+                        <p class="t-date">Completed May 2026</p>
+                        <p class="t-title">B.E. Computer Engineering</p>
+                        <p class="t-sub">Vidush Somany Institute of Technology and Research, Gandhinagar</p>
+                        <p class="t-cgpa">CGPA 7.30</p>
+                    </li>
+                    <li>
+                        <p class="t-date">Completed Sep 2020</p>
+                        <p class="t-title">Diploma in Information Technology</p>
+                        <p class="t-sub">Dalia Institute of Diploma Studies, Kheda</p>
+                        <p class="t-cgpa">CGPA 8.27</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-                <!-- Flagship Project 2: DocShare -->
-                <div class="flagship-item reveal">
-                    <div class="flagship-item__body">
-                        <div class="flagship-item__header">
-                            <span class="flagship-item__type">AI-Powered Android Application</span>
-                            <h3 class="flagship-item__title">DocShare</h3>
-                        </div>
-                        <p class="flagship-item__desc">
-                            An education platform facilitating secure document exchange. Integrated role-based faculty
-                            and student permissions
-                            using Firebase Auth and Firestore for real-time document cataloging. Designed and built an
-                            automated summaries pipeline
-                            connecting the Gemini API to automatically review study files and generate study guide
-                            questions.
-                        </p>
-                        <div class="flagship-item__spec">
-                            <div class="spec-block">
-                                <strong>Platform Logic:</strong>
-                                <p>Firebase Authentication, Cloud Firestore real-time DB, MVVM Pattern</p>
-                            </div>
-                            <div class="spec-block">
-                                <strong>AI Core:</strong>
-                                <p>Google Gemini API integration, prompt orchestration, structured Q&amp;A generation
+        <section id="projects">
+            <div class="section-head">
+                <div>
+                    <p class="section-tag">// projects<span class="screen-chip">03/05</span></p>
+                    <h2 class="section-title">Things I've shipped</h2>
+                </div>
+                <p class="section-note">Three builds, from Compose UI down to the backend serving it.</p>
+            </div>
+            <div class="project-list">
+
+                <div class="project-card">
+                    <div class="project-icon">F1</div>
+                    <div>
+                        <div class="project-top">
+                            <div>
+                                <p class="project-kind" style="color:var(--primary);">Android app</p>
+                                <p class="project-name">F1Companion</p>
+                                <p class="project-tagline">Native Android app · live race data, standings, and weather
                                 </p>
                             </div>
+                            <div class="project-links">
+                                <a href="https://github.com/JenilMacwan/F1Companion" target="_blank" rel="noopener">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.41.21 2.46.1 2.72.65.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
                         </div>
-                        <div class="flagship-item__tech">
-                            <span class="chip">Kotlin</span>
-                            <span class="chip">Firebase Auth</span>
-                            <span class="chip">Cloud Firestore</span>
-                            <span class="chip">Gemini API</span>
-                            <span class="chip">MVVM</span>
+                        <ul class="project-bullets">
+                            <li>Architected a feature-rich native Android app in Kotlin and Jetpack Compose, following
+                                clean MVVM architecture with a Repository pattern and Navigation Component across
+                                multiple screens.</li>
+                            <li>Integrated several REST APIs through Retrofit and OkHttp — a custom backend plus the
+                                Open-Meteo API — for live race timing, driver standings, and weather.</li>
+                            <li>Used Kotlin Coroutines and StateFlow for reactive async data handling, with offline
+                                caching in Room DB for a smooth, low-latency experience.</li>
+                        </ul>
+                        <div class="chip-row">
+                            <span class="chip">Kotlin</span><span class="chip">Compose</span><span
+                                class="chip">MVVM</span><span class="chip">Retrofit</span><span
+                                class="chip">Coroutines</span><span class="chip">StateFlow</span><span class="chip">Room
+                                DB</span>
                         </div>
-                        <div class="flagship-item__links">
-                            <a href="https://github.com/JenilMacwan/Docshare-Faculty" target="_blank"
-                                rel="noopener noreferrer" class="btn btn--filled btn--sm">
-                                GitHub Repository
-                            </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">API</div>
+                    <div>
+                        <div class="project-top">
+                            <div>
+                                <p class="project-kind" style="color:var(--accent);">Backend API</p>
+                                <p class="project-name">F1Companion API</p>
+                                <p class="project-tagline">RESTful backend · aggregates race, telemetry, and weather
+                                    data</p>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/JenilMacwan/f1companion-api" target="_blank" rel="noopener">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.41.21 2.46.1 2.72.65.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
+                                    </svg>
+                                    GitHub
+                                </a>
+                                <a href="https://f1companion-api.vercel.app" target="_blank" rel="noopener">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8">
+                                        <path d="M7 17 17 7M17 7H8M17 7v9" />
+                                    </svg>
+                                    Live API
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Designed and deployed a custom RESTful API in Python and FastAPI, hosted on Vercel,
+                                pulling together Jolpica-Ergast, OpenF1, and Open-Meteo into one low-latency endpoint
+                                built for mobile.</li>
+                            <li>Handled session-key bridging between differing API conventions, normalised country
+                                names, and trimmed JSON payloads for fast parsing on the Android client.</li>
+                        </ul>
+                        <div class="chip-row">
+                            <span class="chip">Python</span><span class="chip">FastAPI</span><span
+                                class="chip">Vercel</span><span class="chip">REST API</span><span
+                                class="chip">JSON</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">DS</div>
+                    <div>
+                        <div class="project-top">
+                            <div>
+                                <p class="project-kind" style="color:var(--primary);">Android app</p>
+                                <p class="project-name">DocShare</p>
+                                <p class="project-tagline">Student-faculty file app · secure document exchange</p>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/JenilMacwan/Docshare-Faculty" target="_blank"
+                                    rel="noopener">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.41.21 2.46.1 2.72.65.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="project-bullets">
+                            <li>Built a secure document exchange platform using Firebase Auth and Cloud Firestore, with
+                                real-time file management and role-based access for students and faculty.</li>
+                            <li>Added the Gemini API to auto-summarise uploaded documents and generate contextual
+                                Q&amp;A study guides, cutting down manual review time for students.</li>
+                        </ul>
+                        <div class="chip-row">
+                            <span class="chip">Kotlin</span><span class="chip">Firebase Auth</span><span
+                                class="chip">Cloud Firestore</span><span class="chip">Gemini API</span><span
+                                class="chip">MVVM</span>
                         </div>
                     </div>
                 </div>
@@ -432,155 +310,295 @@ fun F1DashboardScreen(
             </div>
         </section>
 
-        <!-- ===== SKILLS ===== -->
-        <section class="skills" id="skills" aria-labelledby="skillsTitle">
-            <div class="container">
-                <div class="section-eyebrow reveal">Skills</div>
-                <h2 class="section-heading reveal reveal--d1" id="skillsTitle">Technical toolkit</h2>
-                <div class="skills__grid">
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">Languages</h3>
-                        <div class="skill-group__chips">
-                            <span class="chip">Kotlin</span><span class="chip">Java</span><span
-                                class="chip">Python</span>
+        <section id="skills">
+            <div class="section-head">
+                <div>
+                    <p class="section-tag">// skills<span class="screen-chip">04/05</span></p>
+                    <h2 class="section-title">What I build with</h2>
+                </div>
+                <p class="section-note">Core stack in green, supporting tools in amber.</p>
+            </div>
+
+            <div class="skills-grid" id="skillsGrid">
+
+                <div class="skill-card">
+                    <div class="skill-card-top">
+                        <div class="skill-card-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="m8 6-6 6 6 6M16 6l6 6-6 6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="skill-card-title">Languages</p>
+                            <p class="skill-card-level">Core stack</p>
                         </div>
                     </div>
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">Android</h3>
-                        <div class="skill-group__chips">
-                            <span class="chip">Jetpack Compose</span><span class="chip">Navigation Component</span><span
-                                class="chip">ViewModel</span><span class="chip">Activities &amp; Fragments</span><span
-                                class="chip">RecyclerView</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">Architecture</h3>
-                        <div class="skill-group__chips">
-                            <span class="chip">MVVM</span><span class="chip">Repository Pattern</span><span
-                                class="chip">Hilt (Dagger)</span><span class="chip">OOP Principles</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">Networking</h3>
-                        <div class="skill-group__chips">
-                            <span class="chip">Retrofit</span><span class="chip">OkHttp</span><span class="chip">REST
-                                APIs</span><span class="chip">FastAPI</span><span class="chip">Vercel</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">Async & Data</h3>
-                        <div class="skill-group__chips">
-                            <span class="chip">Coroutines</span><span class="chip">Flow</span><span
-                                class="chip">StateFlow</span><span class="chip">Room DB</span><span
-                                class="chip">Firebase Firestore</span><span class="chip">Firebase Auth</span>
-                        </div>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3 class="skill-group__title">Tools</h3>
-                        <div class="skill-group__chips">
-                            <span class="chip">Git &amp; GitHub</span><span class="chip">Android Studio</span><span
-                                class="chip">Debugging</span><span class="chip">Profiler</span><span
-                                class="chip">Logcat</span>
-                        </div>
+                    <div class="chip-row">
+                        <span class="chip">Kotlin</span><span class="chip">Java</span><span class="chip">Python</span>
                     </div>
                 </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-top">
+                        <div class="skill-card-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="7" y="2" width="10" height="20" rx="2" />
+                                <path d="M11 18h2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="skill-card-title">Android development</p>
+                            <p class="skill-card-level">Core stack</p>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">Android Studio</span><span class="chip">Jetpack Compose</span><span
+                            class="chip">Activities &amp; Fragments</span><span class="chip">RecyclerView</span><span
+                            class="chip">Navigation Component</span><span class="chip">ViewModel</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-top">
+                        <div class="skill-card-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 7h16M4 12h16M4 17h16" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="skill-card-title">Architecture</p>
+                            <p class="skill-card-level">Core stack</p>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">MVVM Architecture</span><span class="chip">Repository Pattern</span><span
+                            class="chip">OOP Principles</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-top">
+                        <div class="skill-card-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M3 12h18M12 3c2.4 2.5 2.4 15.5 0 18M12 3c-2.4 2.5-2.4 15.5 0 18" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="skill-card-title">Networking</p>
+                            <p class="skill-card-level">Core stack</p>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">Retrofit</span><span class="chip">OkHttp</span><span class="chip">REST API
+                            Integration</span><span class="chip">FastAPI</span><span class="chip">Vercel</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-top">
+                        <div class="skill-card-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M21 12a9 9 0 1 1-3-6.7" />
+                                <path d="M21 3v6h-6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="skill-card-title">Async &amp; data</p>
+                            <p class="skill-card-level">Core stack</p>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">Kotlin Coroutines</span><span class="chip">Flow</span><span
+                            class="chip">StateFlow</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-top">
+                        <div class="skill-card-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <ellipse cx="12" cy="5" rx="8" ry="3" />
+                                <path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" />
+                                <path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="skill-card-title">Storage</p>
+                            <p class="skill-card-level">Core stack</p>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">Firebase Firestore</span><span class="chip">Firebase Auth</span><span
+                            class="chip">Room DB</span>
+                    </div>
+                </div>
+
+                <div class="skill-card is-support">
+                    <div class="skill-card-top">
+                        <div class="skill-card-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M9 2v4M15 2v4M7 10h10v4a5 5 0 0 1-10 0v-4Z" />
+                                <path d="M12 19v3" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="skill-card-title">Dependency injection</p>
+                            <p class="skill-card-level">Supporting</p>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">Hilt (Dagger)</span>
+                    </div>
+                </div>
+
+                <div class="skill-card is-support">
+                    <div class="skill-card-top">
+                        <div class="skill-card-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path
+                                    d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="skill-card-title">Tools</p>
+                            <p class="skill-card-level">Supporting</p>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">Git</span><span class="chip">GitHub</span><span
+                            class="chip">Logcat</span><span class="chip">Debugging</span><span class="chip">Android
+                            Studio Profiler</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- ===== EDUCATION ===== -->
-        <section class="education surface-1" id="education" aria-labelledby="eduTitle">
-            <div class="container">
-                <div class="section-eyebrow reveal">Education</div>
-                <h2 class="section-heading reveal reveal--d1" id="eduTitle">Academic background</h2>
-                <div class="education__timeline">
-                    <div class="edu-item reveal">
-                        <div class="edu-item__marker" aria-hidden="true">
-                            <div class="edu-dot"></div>
-                            <div class="edu-line"></div>
-                        </div>
-                        <div class="edu-item__body">
-                            <span class="edu-item__date">Graduated May 2026</span>
-                            <h3 class="edu-item__degree">B.E. in Computer Engineering</h3>
-                            <p class="edu-item__school">Vidush Somany Institute of Technology and Research —
-                                Gandhinagar, Gujarat</p>
-                            <span class="chip chip--accent">CGPA: 7.30</span>
-                            <p class="edu-item__courses">Mobile Computing · Data Structures &amp; Algorithms · OOP ·
-                                Database Management Systems · Software Engineering</p>
-                        </div>
-                    </div>
-                    <div class="edu-item reveal">
-                        <div class="edu-item__marker" aria-hidden="true">
-                            <div class="edu-dot"></div>
-                        </div>
-                        <div class="edu-item__body">
-                            <span class="edu-item__date">Completed Sep 2020</span>
-                            <h3 class="edu-item__degree">Diploma in Information Technology</h3>
-                            <p class="edu-item__school">Dalia Institute of Diploma Studies — Kheda, Gujarat</p>
-                            <span class="chip chip--accent">CGPA: 8.27</span>
-                        </div>
-                    </div>
+        <section id="contact">
+            <div class="section-head">
+                <div>
+                    <p class="section-tag">// contact<span class="screen-chip">05/05</span></p>
+                    <h2 class="section-title">Get in touch</h2>
                 </div>
+                <p class="section-note">One message away from a reply.</p>
+            </div>
+            <div class="contact-card reveal">
+                <div>
+                    <h2>Let's build something.</h2>
+                    <p>Open to Android Developer roles and internships. If there's a mobile product you're shipping, I'd
+                        like to hear about it.</p>
+                    <a href="mailto:jenilmacwan29@gmail.com" class="btn"
+                        style="background:#fff;color:var(--primary-dim);">Send an email</a>
+                </div>
+                <ul class="contact-list">
+                    <li>
+                        <a href="mailto:jenilmacwan29@gmail.com" data-copy="jenilmacwan29@gmail.com">
+                            <span class="row-label">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m2 6 10 7L22 6" />
+                                </svg>
+                                Email
+                            </span>
+                            <span class="row-value">jenilmacwan29@gmail.com</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+918490858992" data-copy="+91 84908 58992">
+                            <span class="row-label">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6">
+                                    <path
+                                        d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.7 2Z" />
+                                </svg>
+                                Phone
+                            </span>
+                            <span class="row-value">+91 84908 58992</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/JenilMacwan" target="_blank" rel="noopener">
+                            <span class="row-label">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.41.21 2.46.1 2.72.65.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
+                                </svg>
+                                GitHub
+                            </span>
+                            <span class="row-value">JenilMacwan</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.linkedin.com/in/jenil-macwan-20a41824b" target="_blank" rel="noopener">
+                            <span class="row-label">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02ZM3.14 8.75h3.6V21h-3.6V8.75Zm6.2 0h3.45v1.68h.05c.48-.9 1.66-1.86 3.42-1.86 3.66 0 4.33 2.4 4.33 5.53V21h-3.6v-5.98c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21h-3.6V8.75Z" />
+                                </svg>
+                                LinkedIn
+                            </span>
+                            <span class="row-value">jenil-macwan</span>
+                        </a>
+                    </li>
+                    <li>
+                        <span class="row">
+                            <span class="row-label">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6">
+                                    <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0Z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                Location
+                            </span>
+                            <span class="row-value">Ahmedabad, Gujarat</span>
+                        </span>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <!-- ===== CONTACT ===== -->
-        <section class="contact" id="contact" aria-labelledby="contactTitle">
-            <div class="container">
-                <div class="section-eyebrow reveal">Contact</div>
-                <h2 class="section-heading reveal reveal--d1" id="contactTitle">Let's build something</h2>
-                <p class="contact__text reveal reveal--d2">
-                    I'm looking for Android Developer roles and internships. Feel free to connect via any channel.
-                </p>
-                <div class="contact__grid reveal reveal--d3">
-                    <a href="mailto:jenilmacwan29@gmail.com" class="contact-card">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="4" width="20" height="16" rx="2" />
-                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                        </svg>
-                        <div><span class="contact-card__label">Email</span><span
-                                class="contact-card__value">jenilmacwan29@gmail.com</span></div>
-                    </a>
-                    <a href="tel:+918490858992" class="contact-card">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                        </svg>
-                        <div><span class="contact-card__label">Phone</span><span class="contact-card__value">+91
-                                8490858992</span></div>
-                    </a>
-                    <a href="https://github.com/JenilMacwan" target="_blank" rel="noopener noreferrer"
-                        class="contact-card">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                        </svg>
-                        <div><span class="contact-card__label">GitHub</span><span
-                                class="contact-card__value">JenilMacwan</span></div>
-                    </a>
-                    <a href="http://www.linkedin.com/in/jenil-macwan-20a41824b" target="_blank"
-                        rel="noopener noreferrer" class="contact-card">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                        <div><span class="contact-card__label">LinkedIn</span><span class="contact-card__value">Jenil
-                                Macwan</span></div>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <footer class="site-footer">
+            build v1.0 — designed &amp; coded by jenil macwan — 2026
+        </footer>
+
     </main>
 
-    <footer class="footer" role="contentinfo">
-        <div class="container footer__inner">
-            <p>Designed &amp; built by <strong>Jenil Macwan</strong></p>
-            <p class="footer__copy">&copy; 2026</p>
+    <nav class="bottomnav">
+        <div class="bottomnav-inner" role="tablist">
+            <button class="nav-item active" data-target="home">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="m3 11 9-8 9 8" />
+                    <path d="M5 10v10h14V10" />
+                </svg>
+                <span>Home</span>
+            </button>
+            <button class="nav-item" data-target="projects">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                    <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                    <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                    <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                </svg>
+                <span>Projects</span>
+            </button>
+            <button class="nav-item" data-target="skills">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="m8 6-6 6 6 6M16 6l6 6-6 6" />
+                </svg>
+                <span>Skills</span>
+            </button>
+            <button class="nav-item" data-target="contact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m2 6 10 7L22 6" />
+                </svg>
+                <span>Contact</span>
+            </button>
         </div>
-    </footer>
-
-    <script src="script.js" defer></script>
+    </nav>
+    <script src="script.js"></script>
 </body>
 
 </html>

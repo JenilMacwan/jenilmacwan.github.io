@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <!-- Dark background box with rounded corners matching Material 3 -->
-  <rect width="100" height="100" rx="24" fill="#141218"/>
+  <rect width="100" height="100" rx="24" fill="#1B221D"/>
   
-  <!-- "JM." Monogram text -->
+  <!-- "JM" Monogram text -->
   <text x="50%" y="50%" 
         dominant-baseline="central" 
         text-anchor="middle" 
-        font-family="system-ui, -apple-system, sans-serif" 
-        font-weight="800" 
+        font-family="Space Grotesk, system-ui, sans-serif" 
+        font-weight="700" 
         font-size="42" 
-        fill="#D0BCFF">JM</text>
+        fill="#2F5D50">JM</text>
 </svg>
