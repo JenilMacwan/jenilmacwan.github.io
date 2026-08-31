@@ -205,3 +205,58 @@ document.querySelectorAll('.topnav a').forEach(function (link) {
         }
     });
 });
+
+// Theme Switcher Logic
+var themeToggleBtn = document.getElementById('themeToggle');
+var iconSun = document.querySelector('.icon-sun');
+var iconMoon = document.querySelector('.icon-moon');
+
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    if (iconSun && iconMoon) {
+        if (theme === 'dark') {
+            iconSun.style.display = 'block';
+            iconMoon.style.display = 'none';
+        } else {
+            iconSun.style.display = 'none';
+            iconMoon.style.display = 'block';
+        }
+    }
+}
+
+// Initialize Theme
+var savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    setTheme(savedTheme);
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setTheme('dark');
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function () {
+        var currentTheme = document.documentElement.getAttribute('data-theme');
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+}
+
+// 3D tilt on project cards
+if (pointerFine && !prefersReduced) {
+    document.querySelectorAll('.project-card').forEach(function(card) {
+        card.style.transformStyle = 'preserve-3d';
+        card.style.willChange = 'transform';
+        
+        card.addEventListener('mousemove', function(e) {
+            card.style.transition = 'none'; // remove transition for smooth tracking
+            var rect = card.getBoundingClientRect();
+            var x = (e.clientX - rect.left) / rect.width - 0.5;
+            var y = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform = 'translateY(0) scale(1.02) rotateY(' + (x * 6) + 'deg) rotateX(' + (y * -6) + 'deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            card.style.transition = ''; // restore css transition
+            card.style.transform = '';
+        });
+    });
+}
