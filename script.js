@@ -78,8 +78,8 @@ function updateScrollProgress() {
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 updateScrollProgress();
 
-// phone tilt on hover (desktop, fine pointer only)
-if (phoneShell && !prefersReduced) {
+// phone tilt on hover
+if (phoneShell) {
     phoneShell.addEventListener('mousemove', function (e) {
         var rect = phoneShell.getBoundingClientRect();
         var x = (e.clientX - rect.left) / rect.width - 0.5;
