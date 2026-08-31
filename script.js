@@ -79,7 +79,7 @@ window.addEventListener('scroll', updateScrollProgress, { passive: true });
 updateScrollProgress();
 
 // phone tilt on hover (desktop, fine pointer only)
-if (phoneShell && pointerFine && !prefersReduced) {
+if (phoneShell && !prefersReduced) {
     phoneShell.addEventListener('mousemove', function (e) {
         var rect = phoneShell.getBoundingClientRect();
         var x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -241,7 +241,7 @@ if (themeToggleBtn) {
 }
 
 // 3D tilt on project cards
-if (pointerFine && !prefersReduced) {
+if (!prefersReduced) {
     document.querySelectorAll('.project-card').forEach(function(card) {
         card.style.transformStyle = 'preserve-3d';
         card.style.willChange = 'transform';
@@ -251,7 +251,7 @@ if (pointerFine && !prefersReduced) {
             var rect = card.getBoundingClientRect();
             var x = (e.clientX - rect.left) / rect.width - 0.5;
             var y = (e.clientY - rect.top) / rect.height - 0.5;
-            card.style.transform = 'translateY(0) scale(1.02) rotateY(' + (x * 6) + 'deg) rotateX(' + (y * -6) + 'deg)';
+            card.style.transform = 'perspective(1000px) translateY(0) scale(1.02) rotateY(' + (x * 6) + 'deg) rotateX(' + (y * -6) + 'deg)';
         });
         
         card.addEventListener('mouseleave', function() {
