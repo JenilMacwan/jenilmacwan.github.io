@@ -241,7 +241,7 @@ if (themeToggleBtn) {
 }
 
 // 3D tilt on project cards
-if (!prefersReduced) {
+if (true) {
     document.querySelectorAll('.project-card').forEach(function(card) {
         card.style.transformStyle = 'preserve-3d';
         card.style.willChange = 'transform';
