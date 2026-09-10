@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-10T20:38:00Z",
+  "title": "Design System: Jenil Macwan Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "IDE Blue", "canonical": "#56A8F5" },
+      "primary-dim": { "role": "primary", "displayName": "IDE Blue Dim", "canonical": "#4B93D6" },
+      "primary-soft": { "role": "primary", "displayName": "IDE Blue Soft", "canonical": "rgba(86, 168, 245, 0.15)" },
+      "accent": { "role": "secondary", "displayName": "IDE Orange", "canonical": "#F2A25C" },
+      "accent-soft": { "role": "secondary", "displayName": "IDE Orange Soft", "canonical": "rgba(242, 162, 92, 0.15)" },
+      "bg": { "role": "neutral", "displayName": "Background", "canonical": "#1E1F22" },
+      "surface": { "role": "neutral", "displayName": "Surface", "canonical": "#2B2D30" },
+      "surface-dim": { "role": "neutral", "displayName": "Surface Dim", "canonical": "#393B40" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#DFE1E5" },
+      "ink-soft": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#A9B0B7" },
+      "ink-faint": { "role": "neutral", "displayName": "Ink Faint", "canonical": "#6F737A" },
+      "line": { "role": "neutral", "displayName": "Line", "canonical": "#43454A" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines only." },
+      "body": { "displayName": "Body", "purpose": "Standard paragraph text." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows, tags, and metadata." }
+    },
+    "shadows": [
+      { "name": "card-hover", "value": "0 14px 30px -16px rgba(0, 0, 0, 0.5)", "purpose": "Applied to project and skill cards on hover." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Used for main calls to action.",
+      "html": "<button class=\"ds-btn-primary\">View projects</button>",
+      "css": ".ds-btn-primary { background: #56A8F5; color: #fff; padding: 13px 24px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600; border: 1px solid transparent; border-radius: 999px; transition: transform 0.15s ease, background 0.2s ease; cursor: pointer; } .ds-btn-primary:hover { background: #4B93D6; } .ds-btn-primary:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Used for secondary actions.",
+      "html": "<button class=\"ds-btn-ghost\">Say hello</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #DFE1E5; border: 1px solid #43454A; padding: 13px 24px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600; border-radius: 999px; transition: transform 0.15s ease, border-color 0.2s ease; cursor: pointer; } .ds-btn-ghost:hover { border-color: #A9B0B7; } .ds-btn-ghost:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Glass Panel",
+      "kind": "card",
+      "refersTo": "glass-panel",
+      "description": "Used for cards and containers to create depth.",
+      "html": "<div class=\"ds-glass-panel\"><p style=\"margin:0;font-family:'Manrope',sans-serif;color:#DFE1E5;\">Glassmorphism Card</p></div>",
+      "css": ".ds-glass-panel { background: #2B2D30; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 28px; transition: border-color 0.25s ease, box-shadow 0.25s ease; } .ds-glass-panel:hover { border-color: #56A8F5; box-shadow: 0 14px 30px -16px rgba(0, 0, 0, 0.5); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineering Portfolio",
+    "overview": "Professional, crisp, and highly technical. The UI stays out of the way of the content and embraces a native IDE-inspired aesthetic. It relies on clean lines, a dark, coding-centric palette, and a structured layout to present native Android development skills.",
+    "keyCharacteristics": [
+      "Clean, structured, precise",
+      "Professional and technical voice",
+      "JetBrains IDE-inspired dark theme",
+      "Highly legible monospace-forward typography"
+    ],
+    "rules": [
+      { "name": "The Content-First Rule", "body": "The UI should never overshadow the work. Use accent colors sparingly to draw attention to interactive elements, not to decorate the page.", "section": "colors" },
+      { "name": "The Mono Metadata Rule", "body": "All metadata, tags, headings and technical details should use the monospace font to reinforce the developer aesthetic.", "section": "typography" },
+      { "name": "The Interactive Lift Rule", "body": "Cards and interactive containers should lift subtly on hover, signaling clickability without overwhelming the user.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use glass-panel for primary content containers to create depth.",
+      "Do use JetBrains Mono for technical terms, dates, headings, and metadata."
+    ],
+    "donts": [
+      "Don't overuse the IDE Orange accent color; keep it reserved for active states or warnings.",
+      "Don't use solid drop shadows on resting elements."
+    ]
+  }
+}
