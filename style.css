@@ -27,6 +27,7 @@
     --orb-1: rgba(86, 168, 245, 0.15);
     --orb-2: rgba(242, 162, 92, 0.15);
     --chip-muted: #b0b7c1;
+    --stat-num: #6BB5F7;
 }
 
 [data-theme="light"] {
@@ -50,6 +51,7 @@
     --orb-1: rgba(47, 93, 80, 0.15);
     --orb-2: rgba(201, 122, 43, 0.15);
     --chip-muted: #73796e;
+    --stat-num: #2E7AC2;
 }
 
 * {
@@ -312,6 +314,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 40;
+    background-color: var(--bg);
     background: var(--nav-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
@@ -372,10 +375,23 @@ a {
 .topnav a {
     position: relative;
     padding: 4px 0;
+    transition: color 0.2s ease;
 }
 
-.topnav a:hover {
+.topnav a:hover,
+.topnav a.active {
     color: var(--ink);
+}
+
+.topnav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 1px;
 }
 
 .status-pill {
@@ -388,6 +404,15 @@ a {
     background: var(--primary-soft);
     padding: 6px 12px;
     border-radius: var(--radius-round);
+}
+
+.status-pill::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #34d399;
+    flex-shrink: 0;
 }
 
 
@@ -546,7 +571,7 @@ h1.headline em {
 .btn-ghost {
     background: transparent;
     color: var(--ink);
-    border-color: var(--line);
+    border-color: var(--ink-faint);
 }
 
 .btn-ghost:hover {
@@ -644,7 +669,7 @@ h1.headline em {
     display: block;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--ink-faint);
 
     letter-spacing: 0.6px;
@@ -680,7 +705,7 @@ h1.headline em {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 600;
     font-size: 18px;
-    color: var(--primary);
+    color: var(--stat-num);
 }
 
 .stat-tile .label {
@@ -746,7 +771,7 @@ h1.headline em {
     background: var(--surface-dim);
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: var(--ink-faint);
+    color: var(--chip-muted);
 }
 
 /* ---------- Sections ---------- */
@@ -757,11 +782,10 @@ section {
 
 .section-head {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
     margin-bottom: 36px;
-    flex-wrap: wrap;
 }
 
 .section-tag {
@@ -784,14 +808,9 @@ h2.section-title {
 .section-note {
     font-size: 13px;
     color: var(--ink-faint);
-    max-width: 32ch;
-    text-align: right;
-}
-
-@media (max-width:640px) {
-    .section-note {
-        text-align: left;
-    }
+    max-width: 52ch;
+    text-align: left;
+    margin: 0;
 }
 
 /* ---------- About ---------- */
@@ -815,7 +834,7 @@ h2.section-title {
 }
 
 .about-card p {
-    font-size: 15.5px;
+    font-size: 15px;
     line-height: 1.7;
     color: var(--ink-soft);
     margin: 0;
@@ -918,13 +937,13 @@ h2.section-title {
 .project-icon {
     width: 56px;
     height: 56px;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     background: var(--surface-dim);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    padding: 12px;
+    padding: 6px;
     border: 1px solid var(--line);
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
@@ -965,20 +984,20 @@ h2.section-title {
 }
 
 .project-tagline {
-    font-size: 13.5px;
+    font-size: 13px;
     color: var(--ink-faint);
     margin: 0;
 }
 
 .project-links {
     display: flex;
-    gap: 8px;
+    gap: 12px;
     flex-shrink: 0;
 }
 
 .project-links a {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
+    font-size: 12px;
     padding: 7px 13px;
     border-radius: 999px;
     border: 1px solid var(--line);
@@ -1106,7 +1125,7 @@ h2.section-title {
 .skill-card-icon {
     width: 42px;
     height: 42px;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1129,12 +1148,17 @@ h2.section-title {
 }
 
 .skill-card-level {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-
-    letter-spacing: 0.5px;
-    color: var(--primary);
-    margin: 3px 0 0;
+    /* Visually hidden; section legend + color coding conveys this.
+       Kept in DOM for screen readers. */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .skill-card.is-support .skill-card-level {
@@ -1150,6 +1174,7 @@ h2.section-title {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 40px;
+    align-items: center;
 }
 
 @media (max-width:760px) {
@@ -1243,6 +1268,16 @@ footer.site-footer {
     justify-content: center;
     pointer-events: none;
     padding: 14px;
+}
+
+@media (min-width:761px) {
+    .bottomnav {
+        display: none;
+    }
+
+    body {
+        padding-bottom: 0;
+    }
 }
 
 .bottomnav-inner {
@@ -1372,7 +1407,7 @@ footer.site-footer {
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
     opacity: 0.6;
 }

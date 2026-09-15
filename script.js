@@ -153,9 +153,10 @@ var phoneObserver = new IntersectionObserver(function (entries) {
 }, { threshold: 0.3 });
 if (phoneShell) phoneObserver.observe(phoneShell);
 
-// bottom nav active state via scroll position
+// nav active state via scroll position
 var sections = ['home', 'projects', 'skills', 'contact'].map(function (id) { return document.getElementById(id); });
 var navItems = document.querySelectorAll('.nav-item');
+var topnavLinks = document.querySelectorAll('.topnav a');
 
 var sectionObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -169,6 +170,9 @@ var sectionObserver = new IntersectionObserver(function (entries) {
                 }
                 item.classList.toggle('active', willBeActive);
                 item.setAttribute('aria-selected', willBeActive ? 'true' : 'false');
+            });
+            topnavLinks.forEach(function (link) {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + id);
             });
         }
     });
