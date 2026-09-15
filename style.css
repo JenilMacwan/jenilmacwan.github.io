@@ -26,6 +26,7 @@
     --glass-blur: blur(12px);
     --orb-1: rgba(86, 168, 245, 0.15);
     --orb-2: rgba(242, 162, 92, 0.15);
+    --chip-muted: #b0b7c1;
 }
 
 [data-theme="light"] {
@@ -48,6 +49,7 @@
     --glass-blur: blur(12px);
     --orb-1: rgba(47, 93, 80, 0.15);
     --orb-2: rgba(201, 122, 43, 0.15);
+    --chip-muted: #73796e;
 }
 
 * {
@@ -248,7 +250,7 @@ a {
     padding: 2px 8px;
     border-radius: var(--radius-round);
     background: var(--surface-dim);
-    color: var(--ink-faint);
+    color: var(--chip-muted);
     letter-spacing: 0.3px;
     vertical-align: middle;
 }
@@ -403,8 +405,7 @@ a {
     overflow: hidden;
 }
 
-.hero::before {
-    content: "";
+.hero-dots {
     position: absolute;
     top: -60px;
     right: -6%;

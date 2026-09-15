@@ -57,7 +57,7 @@
                 <div class="brand-mark">JM</div>
                 <div class="brand-name">Jenil Macwan<span>Android Developer</span></div>
             </div>
-            <nav class="topnav">
+            <nav class="topnav" aria-label="Main">
                 <a href="#home">Home</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
@@ -93,6 +93,8 @@
             <!-- Background Orbs -->
             <div class="hero-bg-orb orb-1"></div>
             <div class="hero-bg-orb orb-2"></div>
+            <!-- Decorative dot-grid (was ::before; moved to real DOM for contrast resolution) -->
+            <div class="hero-dots" aria-hidden="true"></div>
 
             <div class="hero-grid">
                 <div class="hero-anim" id="heroAnim">
@@ -601,16 +603,16 @@
 
     </main>
 
-    <nav class="bottomnav">
+    <nav class="bottomnav" aria-label="Bottom">
         <div class="bottomnav-inner" role="tablist">
-            <button class="nav-item active" data-target="home">
+            <button class="nav-item active" role="tab" aria-selected="true" data-target="home">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                     <path d="m3 11 9-8 9 8" />
                     <path d="M5 10v10h14V10" />
                 </svg>
                 <span>Home</span>
             </button>
-            <button class="nav-item" data-target="projects">
+            <button class="nav-item" role="tab" aria-selected="false" data-target="projects">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                     <rect x="3" y="3" width="7" height="7" rx="1.5" />
                     <rect x="14" y="3" width="7" height="7" rx="1.5" />
@@ -619,13 +621,13 @@
                 </svg>
                 <span>Projects</span>
             </button>
-            <button class="nav-item" data-target="skills">
+            <button class="nav-item" role="tab" aria-selected="false" data-target="skills">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                     <path d="m8 6-6 6 6 6M16 6l6 6-6 6" />
                 </svg>
                 <span>Skills</span>
             </button>
-            <button class="nav-item" data-target="contact">
+            <button class="nav-item" role="tab" aria-selected="false" data-target="contact">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                     <path d="m2 6 10 7L22 6" />

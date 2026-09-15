@@ -168,6 +168,7 @@ var sectionObserver = new IntersectionObserver(function (entries) {
                     setTimeout(function () { item.classList.remove('bump'); }, 400);
                 }
                 item.classList.toggle('active', willBeActive);
+                item.setAttribute('aria-selected', willBeActive ? 'true' : 'false');
             });
         }
     });
