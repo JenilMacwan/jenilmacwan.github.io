@@ -59,6 +59,7 @@
             </div>
             <nav class="topnav" aria-label="Main">
                 <a href="#home">Home</a>
+                <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
@@ -180,7 +181,7 @@
         <section id="about">
             <div class="section-head">
                 <div>
-                    <p class="section-tag">// about<span class="screen-chip">02/05</span></p>
+                    <p class="section-tag">// about<span class="screen-chip">02/06</span></p>
                     <h2 class="section-title">Who's building this</h2>
                 </div>
                 <p class="section-note">A quick look at the education behind the code.</p>
@@ -210,10 +211,74 @@
             </div>
         </section>
 
+        <section id="experience">
+            <div class="section-head">
+                <div>
+                    <p class="section-tag">// experience<span class="screen-chip">03/06</span></p>
+                    <h2 class="section-title">Where I've worked</h2>
+                </div>
+                <p class="section-note">Professional experience and internships.</p>
+            </div>
+            <div class="experience-list">
+                <div class="experience-card glass-panel"
+                    style="padding: 24px; display: flex; flex-direction: column; gap: 24px; border-radius: var(--radius-lg);">
+                    <div class="exp-header">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--ink); margin: 0;">Android
+                                Developer Intern</h3>
+                            <span class="mono" style="font-size: 0.85rem; color: var(--ink-faint);">July 2026 –
+                                September 2026</span>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-top: 4px;">
+                            <p style="font-size: 1rem; color: var(--primary); font-weight: 600; margin: 0;">Prozanta
+                                Infotech</p>
+                            <span style="font-size: 0.9rem; color: var(--ink-soft);">Remote</span>
+                        </div>
+                        <p style="margin-top: 16px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 0;">
+                            Working on native Android development in Kotlin and Jetpack Compose, contributing to two
+                            in-progress applications built with MVVM architecture.
+                        </p>
+                    </div>
+
+                    <div class="exp-projects"
+                        style="display: flex; flex-direction: column; gap: 20px; border-top: 1px solid var(--line); padding-top: 20px;">
+                        <div class="exp-project">
+                            <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0 0 12px 0;">
+                                Weatherly – Weather App</h4>
+                            <ul class="project-bullets">
+                                <li>Built a modern weather app using Jetpack Compose UI, Hilt for dependency injection,
+                                    and WorkManager for reliable background data syncing.</li>
+                                <li>Implemented Navigation Compose for in-app routing, notification channels for weather
+                                    alerts, a home-screen widget, and a layered local/remote data architecture with
+                                    clean app lifecycle entry points.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-project">
+                            <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0 0 12px 0;">
+                                Gallery App – Media Management App</h4>
+                            <ul class="project-bullets">
+                                <li>Developing a media management app using Jetpack Compose, Room and DataStore for
+                                    persistence, Glide for image loading, and Media3/ExoPlayer for playback, with Kotlin
+                                    Coroutines/Flow handling asynchronous work.</li>
+                                <li>Implemented an adaptive, high-performance media grid with EXIF/location-based
+                                    grouping and multi-select batch operations, alongside a biometric-protected
+                                    encrypted vault and recycle bin for secure media management.</li>
+                                <li>Built an in-app media editor supporting filters, freehand drawing, text overlays,
+                                    and precision cropping with high-resolution Canvas-based rendering, while
+                                    maintaining scoped-storage compliance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="projects">
             <div class="section-head">
                 <div>
-                    <p class="section-tag">// projects<span class="screen-chip">03/05</span></p>
+                    <p class="section-tag">// projects<span class="screen-chip">04/06</span></p>
                     <h2 class="section-title">Things I've shipped</h2>
                 </div>
                 <p class="section-note">Three builds, from Compose UI down to the backend serving it.</p>
@@ -332,8 +397,7 @@
                                 class="chip">MVVM</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/JenilMacwan/Docshare-Faculty" target="_blank"
-                                rel="noopener">
+                            <a href="https://github.com/JenilMacwan/Docshare-Faculty" target="_blank" rel="noopener">
                                 <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                                     <path
                                         d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.41.21 2.46.1 2.72.65.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" />
@@ -350,7 +414,7 @@
         <section id="skills">
             <div class="section-head">
                 <div>
-                    <p class="section-tag">// skills<span class="screen-chip">04/05</span></p>
+                    <p class="section-tag">// skills<span class="screen-chip">05/06</span></p>
                     <h2 class="section-title">What I build with</h2>
                 </div>
                 <p class="section-note">Core stack in green, supporting tools in amber.</p>
@@ -515,7 +579,7 @@
 
         <section id="contact">
             <div class="section-head" style="margin-bottom: 24px;">
-                <p class="section-tag" style="margin: 0;">// contact<span class="screen-chip">05/05</span></p>
+                <p class="section-tag" style="margin: 0;">// contact<span class="screen-chip">06/06</span></p>
             </div>
             <div class="contact-card reveal">
                 <div>
@@ -606,6 +670,13 @@
                     <path d="M5 10v10h14V10" />
                 </svg>
                 <span>Home</span>
+            </button>
+            <button class="nav-item" role="tab" aria-selected="false" data-target="experience">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                <span>Experience</span>
             </button>
             <button class="nav-item" role="tab" aria-selected="false" data-target="projects">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
